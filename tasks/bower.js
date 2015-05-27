@@ -29,9 +29,10 @@ module.exports = function(grunt) {
     var options = this.data.options || {};
     var stripAffix = options.stripJsAffix || options.stripAffix;
     var copyOptions = {
-        process: options.process || null
+        process: options.process || null,
+        noProcess: options.noProcess || null
     };
-      
+
     bower.commands.list({paths: true, relative: false})
       .on('end',  function (data) {
         _(data).each(function(lib_path, lib_name) {
